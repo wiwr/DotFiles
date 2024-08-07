@@ -1,0 +1,23 @@
+goto() {
+	case "$1" in
+		VideoRecordeArch)
+			cd /data/VideoRecordeArch
+			;;
+		Archive)
+			cd /data/Archive
+			;;
+		OldHDD)
+			cd /data/OldHDD
+			;;
+		OldHome)
+			cd /data/OldHome
+			;;
+		*)
+			echo "Wrong paramiter for goto; '$1' is unexpected"
+			return 1
+			;;
+	esac
+	pwd
+}
+
+complete -W "VideoRecordeArch Archive OldHDD OldHome" goto
